@@ -86,7 +86,8 @@ Action playerTookDamage(int victim, int& attacker, int& inflictor, float& damage
 		new String:weaponName[32];
 		GetClientWeapon(attacker, weaponName, sizeof(weaponName));
 		
-		if(TF2_IsPlayerInCondition(attacker, 11))
+		if(TF2_IsPlayerInCondition(attacker, (TFCond_Kritzkrieged | TFCond_HalloweenCritCandy | TFCond_CritCanteen | TFCond_CritDemoCharge
+		| TFCond_CritOnFirstBlood | TFCond_CritOnWin | TFCond_CritOnFlagCapture | TFCond_CritOnKill | TFCond_CritMmmph | TFCond_CritOnDamage)))
 			return Plugin_Continue;
 			
 		else if(
